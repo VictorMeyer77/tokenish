@@ -2,7 +2,8 @@ tests:
   script:
     # installation python
     - apt-get update -qy
-    - apt-get install -y python3
+    - apt-get install -y python3 python3-pip
+    - pip3 install coverage
     # execution des tests
     - coverage run --omit '/usr/local/*,/usr/lib/*,tests/*' -m unittest discover tests/
     - coverage report -m
