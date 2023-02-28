@@ -19,10 +19,11 @@ class TestEncoder(unittest.TestCase):
                        "test/resources/input/links/1.txt"]
         token_lists = tokenizer.gather_tokens(token_paths)
         target_list = [["user1", "user2", "admin", "root", "user"],
-                               ["abcd", "efgh", "1234", "6712"],
-                               ["test.com", "test.fr"]]
+                       ["abcd", "efgh", "1234", "6712"],
+                       ["test.com", "test.fr"]]
         token_lists.sort()
         target_list.sort()
+        print(token_lists)
         assert token_lists == target_list
 
     def test_fill_tokens_raises_error_when_token_missing(self):
