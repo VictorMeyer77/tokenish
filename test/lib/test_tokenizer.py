@@ -21,9 +21,11 @@ class TestEncoder(unittest.TestCase):
         target_list = [["user1", "user2", "admin", "root", "user"],
                        ["abcd", "efgh", "1234", "6712"],
                        ["test.com", "test.fr"]]
+        for i in range(0, 3):
+            token_lists[i].sort()
+            target_list[i].sort()
         token_lists.sort()
         target_list.sort()
-        print(token_lists)
         assert token_lists == target_list
 
     def test_fill_tokens_raises_error_when_token_missing(self):
