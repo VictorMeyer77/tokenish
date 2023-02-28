@@ -1,0 +1,16 @@
+tests:
+  script:
+    # installation python
+    - apt-get update -qy
+    - apt-get install -y python3
+    # execution des tests
+    - coverage run --omit '/usr/local/*,/usr/lib/*,tests/*' -m unittest discover tests/
+    - coverage report -m
+    - coverage html
+    # controle coverage minimum respecté
+    - covLine=$(coverage report -m | grep "TOTAL")
+    - coverage=$(echo $covLine | cut -d' ' -f 4 | cut -d'%' -f 1)
+  coverage: '/(?i)total.*? (100(?:\.0+)?\%|[1-9]?\d(?:\.\d+)?\%)$/'
+  artifacts:
+    paths:
+      - htmlcov/
