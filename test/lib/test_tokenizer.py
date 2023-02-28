@@ -18,6 +18,7 @@ class TestEncoder(unittest.TestCase):
                        "test/resources/input/passwords",
                        "test/resources/input/links/1.txt"]
         token_lists = tokenizer.gather_tokens(token_paths)
+        print(token_lists)
         assert token_lists == [["user1", "user2", "admin", "root", "user"],
                                ["abcd", "efgh", "1234", "6712"],
                                ["test.com", "test.fr"]]
