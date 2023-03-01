@@ -9,6 +9,7 @@ A simple tool to fill pattern with tokens from file or directory.
 - [How to use](#how-to-use)
 - [Examples](#examples)
 - [License](#license)
+- [Tests](#tests)
 
 ## Installation
 
@@ -48,28 +49,38 @@ Available encodings:
 Print all combination of username/password, where usernames replace &TOKEN_0& and passwords replace &TOKEN_1&.
 
 ```sh
-python tokenish.py "Authentication: Basic &TOKEN_0&:&TOKEN_1&" -t /path/to/usernames/dir/ /path/to/passwords.txt
+tokenish "Authentication: Basic &TOKEN_0&:&TOKEN_1&" -t /path/to/usernames/dir/ /path/to/passwords.txt
 ```
 
 Save all combination of username/password in directory /path/output/ composed by files of 10 000 lines.
 
 ```sh
-python tokenish.py "Authentication: Basic &TOKEN_0&:&TOKEN_1&" -t /path/to/usernames/dir/ /path/to/passwords.txt -o /path/output/
+tokenish "Authentication: Basic &TOKEN_0&:&TOKEN_1&" -t /path/to/usernames/dir/ /path/to/passwords.txt -o /path/output/
 ```
 
 Save all combination of username/password in directory /path/output/ composed by files of 500 lines.
 
 ```sh
-python tokenish.py "Authentication: Basic &TOKEN_0&:&TOKEN_1&" -t /path/to/usernames/dir/ /path/to/passwords.txt -o /path/output/ -om 500
+tokenish "Authentication: Basic &TOKEN_0&:&TOKEN_1&" -t /path/to/usernames/dir/ /path/to/passwords.txt -o /path/output/ -om 500
 ```
 
 Print all combination of username/password, where usernames replace &TOKEN_0& and passwords replace &TOKEN_1&.
 Expression in tag &ENC[...]ODE& will encode in base64.
 
 ```sh
-python tokenish.py "Authentication: Basic &ENC[&TOKEN_0&:&TOKEN_1&]ODE&" -t /path/to/usernames/dir/ /path/to/passwords.txt -e base64
+tokenish "Authentication: Basic &ENC[&TOKEN_0&:&TOKEN_1&]ODE&" -t /path/to/usernames/dir/ /path/to/passwords.txt -e base64
 ```
 
 ## License
 
 tokenish is released under MIT license. See [LICENSE](https://gitlab.com/hack8883509/tokenish/-/blob/main/LICENSE).
+
+## Tests
+
+Run these commands to run tests and update coverage badge:
+
+```sh
+pip install readme-coverage-badger
+coverage run  -m --omit "/usr/local/*,/usr/lib/*,tests/*,venv/*" unittest discover tests/tokenish
+readme-cov
+```
