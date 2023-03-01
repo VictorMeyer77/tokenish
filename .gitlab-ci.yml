@@ -5,7 +5,7 @@ tests:
     - apt-get install -y python3 python3-pip
     - pip3 install coverage
     # execution des tests
-    - coverage run --omit '/usr/local/*,/usr/lib/*,tests/*' -m unittest discover
+    - coverage run --omit '/usr/local/*,/usr/lib/*,test/*' -m unittest discover
     - coverage report -m
     - coverage html
     # controle coverage minimum respecté
