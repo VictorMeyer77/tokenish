@@ -34,6 +34,15 @@ optional arguments:
                         maximum number of rows per file, default 10 000
 ```
 
+Available token path:
+
+- file: all lines in file are consider like tokens.
+- directory: all lines of all files in directory are consider like tokens.
+
+Available encoding:
+
+- base64
+
 ## Examples
 
 Print all combination of username/password, where usernames replace &TOKEN_0& and passwords replace &TOKEN_1&.
