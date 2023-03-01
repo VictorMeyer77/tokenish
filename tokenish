@@ -1,3 +1,3 @@
 #!/bin/sh
 
-python tokenish.py "$@"
+python3 tokenish.py "$@"
