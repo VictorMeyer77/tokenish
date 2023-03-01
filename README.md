@@ -63,4 +63,4 @@ python tokenish.py "Authentication: Basic &ENC[&TOKEN_0&:&TOKEN_1&]ODE&" -t /pat
 
 ## License
 
-tokenish is released under MIT license. See [LICENSE](https://https://gitlab.com/hack8883509/tokenish/-/blob/main/LICENSE).
+tokenish is released under MIT license. See [LICENSE](https://gitlab.com/hack8883509/tokenish/-/blob/main/LICENSE).
