@@ -34,12 +34,12 @@ optional arguments:
                         maximum number of rows per file, default 10 000
 ```
 
-Available token path:
+Available token paths:
 
 - file: all lines in file are consider like tokens.
 - directory: all lines of all files in directory are consider like tokens.
 
-Available encoding:
+Available encodings:
 
 - base64
 
