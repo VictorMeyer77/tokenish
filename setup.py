@@ -1,10 +1,13 @@
 from distutils.core import setup
 
 setup(name="tokenish",
-      version="1.0.0",
+      version="0.1",
       description="A simple tool to fill pattern with tokens from file or directory",
+      url="https://gitlab.com/hack8883509/tokenish",
       author="Victor Meyer",
       author_email="victor_meyer@outlook.fr",
+      packages=["tokenish", "tokenish.lib"],
       python_requires=">=3.6, <4",
-      scripts=["tokenish"],
+      scripts=["bin/tokenish"],
+      license="MIT",
       )
