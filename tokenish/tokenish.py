@@ -1,8 +1,8 @@
 import argparse
 import sys
-from lib.result_writer import ResultWriter
-from lib.tokenizer import *
-from lib.encoder import encode_expressions
+from tokenish.lib.result_writer import ResultWriter
+from tokenish.lib.tokenizer import *
+from tokenish.lib.encoder import encode_expressions
 
 
 def main(pattern, token_paths, encoding, writer):

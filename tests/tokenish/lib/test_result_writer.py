@@ -1,12 +1,12 @@
 import unittest
 import os
-from lib.result_writer import ResultWriter
+from tokenish.lib.result_writer import ResultWriter
 
 
 class TestResultWriter(unittest.TestCase):
 
     def test_result_writer_write_rows_in_different_files(self):
-        output_path = "test/resources/output"
+        output_path = "tests/resources/output"
         result_writer = ResultWriter(output_path, 3)
         for i in range(0, 99):
             result_writer.write_row(str(i))
