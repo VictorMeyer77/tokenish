@@ -159,7 +159,7 @@ tokenish "Authentication: Basic &ENC[&TOKEN_0&:&TOKEN_1&]ODE&" -t /path/to/usern
 
 ## License
 
-tokenish is released under MIT license. See [LICENSE](https://gitlab.com/hack8883509/tokenish/-/blob/main/LICENSE).
+tokenish is released under MIT license. See [LICENSE](https://github.com/VictorMeyer77/tokenish/blob/main/LICENSE).
 
 ## Tests
 

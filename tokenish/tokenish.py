@@ -21,7 +21,7 @@ def main(pattern, token_paths, encoding, writer):
 def parse_args(args):
     parser = argparse.ArgumentParser(prog="tokenish",
                                      description="Generate rows from pattern for each token combinations",
-                                     epilog="More information on GitLab")
+                                     epilog="More information on GitHub")
     parser.add_argument("pattern", help="text to fill with links or usernames/passwords")
     parser.add_argument("-t", "--tokens", nargs="+", help="list of tokens file or directory path")
     parser.add_argument("-e", "--encoding", help="type of encoding to apply")
