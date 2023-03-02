@@ -1,18 +1,18 @@
 import unittest
-import tokenish
 import os
-from lib.result_writer import ResultWriter
+from tokenish.lib.result_writer import ResultWriter
+from tokenish import tokenish
 
 
 class TestMain(unittest.TestCase):
 
     def test_main_write_filled_expressions_when_output_is_defined(self):
-        token_paths = ["test/resources/input/links/1.txt",
-                       "test/resources/input/usernames",
-                       "test/resources/input/passwords"]
+        token_paths = ["tests/resources/input/links/1.txt",
+                       "tests/resources/input/usernames",
+                       "tests/resources/input/passwords"]
         tokenish.main("Link: &ENC[test]ODE& &TOKEN_0& - Auth:&TOKEN_1&/&TOKEN_2&", token_paths,
-                      None, ResultWriter("test/resources/output", 10000))
-        output_path = "test/resources/output/part_0.txt"
+                      None, ResultWriter("tests/resources/output", 10000))
+        output_path = "tests/resources/output/part_0.txt"
         output = open(output_path, "r")
         lines = output.readlines()
         output.close()
@@ -22,12 +22,12 @@ class TestMain(unittest.TestCase):
         os.remove(output_path)
 
     def test_main_write_filled_expressions_when_encoding_and_output_is_defined(self):
-        token_paths = ["test/resources/input/links/1.txt",
-                       "test/resources/input/usernames",
-                       "test/resources/input/passwords"]
+        token_paths = ["tests/resources/input/links/1.txt",
+                       "tests/resources/input/usernames",
+                       "tests/resources/input/passwords"]
         tokenish.main("Link: &ENC[test]ODE& &TOKEN_0& - Auth:&TOKEN_1&/&TOKEN_2&", token_paths,
-                      "base64", ResultWriter("test/resources/output", 10000))
-        output_path = "test/resources/output/part_0.txt"
+                      "base64", ResultWriter("tests/resources/output", 10000))
+        output_path = "tests/resources/output/part_0.txt"
         output = open(output_path, "r")
         lines = output.readlines()
         output.close()

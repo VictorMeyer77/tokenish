@@ -1,22 +1,22 @@
 import unittest
-from lib import tokenizer
+from tokenish.lib import tokenizer
 
 
 class TestEncoder(unittest.TestCase):
 
     def test_get_file_lines_returns_list_of_file_lines(self):
-        lines = tokenizer.get_file_lines("test/resources/input/usernames/1.txt")
+        lines = tokenizer.get_file_lines("tests/resources/input/usernames/1.txt")
         assert lines == ["admin", "root", "user"]
 
     def test_get_all_file_paths_returns_list_of_paths(self):
-        file_paths = tokenizer.get_all_file_paths("test/resources/input/usernames")
+        file_paths = tokenizer.get_all_file_paths("tests/resources/input/usernames")
         file_paths.sort()
-        assert file_paths == ["test/resources/input/usernames/1.txt", "test/resources/input/usernames/2.txt"]
+        assert file_paths == ["tests/resources/input/usernames/1.txt", "tests/resources/input/usernames/2.txt"]
 
     def test_gather_tokens_returns_list_of_tokens(self):
-        token_paths = ["test/resources/input/usernames",
-                       "test/resources/input/passwords",
-                       "test/resources/input/links/1.txt"]
+        token_paths = ["tests/resources/input/usernames",
+                       "tests/resources/input/passwords",
+                       "tests/resources/input/links/1.txt"]
         token_lists = tokenizer.gather_tokens(token_paths)
         target_list = [["user1", "user2", "admin", "root", "user"],
                        ["abcd", "efgh", "1234", "6712"],

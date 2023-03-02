@@ -1,5 +1,5 @@
 import unittest
-from lib import encoder
+from tokenish.lib import encoder
 
 
 class TestEncoder(unittest.TestCase):
