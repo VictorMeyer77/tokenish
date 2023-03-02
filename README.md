@@ -14,6 +14,10 @@ A simple tool to fill pattern with tokens from file or directory.
 
 ## Installation
 
+```sh
+pip install tokenish
+```
+
 ## How to use
 
 ```txt
@@ -135,26 +139,26 @@ Authorization: Basic dXNlcjI6NjcxMg==
 Print all combination of username/password, where usernames replace &TOKEN_0& and passwords replace &TOKEN_1&.
 
 ```sh
-tokenish "Authentication: Basic &TOKEN_0&:&TOKEN_1&" -t /path/to/usernames/dir/ /path/to/passwords.txt
+tokenish "Authorization: Basic &TOKEN_0&:&TOKEN_1&" -t /path/to/usernames/dir/ /path/to/passwords.txt
 ```
 
 Save all combination of username/password in directory /path/output/ composed by files of 10 000 lines.
 
 ```sh
-tokenish "Authentication: Basic &TOKEN_0&:&TOKEN_1&" -t /path/to/usernames/dir/ /path/to/passwords.txt -o /path/output/
+tokenish "Authorization: Basic &TOKEN_0&:&TOKEN_1&" -t /path/to/usernames/dir/ /path/to/passwords.txt -o /path/output/
 ```
 
 Save all combination of username/password in directory /path/output/ composed by files of 500 lines.
 
 ```sh
-tokenish "Authentication: Basic &TOKEN_0&:&TOKEN_1&" -t /path/to/usernames/dir/ /path/to/passwords.txt -o /path/output/ -om 500
+tokenish "Authorization: Basic &TOKEN_0&:&TOKEN_1&" -t /path/to/usernames/dir/ /path/to/passwords.txt -o /path/output/ -om 500
 ```
 
 Print all combination of username/password, where usernames replace &TOKEN_0& and passwords replace &TOKEN_1&.
 Expression in tag &ENC[...]ODE& will encode in base64.
 
 ```sh
-tokenish "Authentication: Basic &ENC[&TOKEN_0&:&TOKEN_1&]ODE&" -t /path/to/usernames/dir/ /path/to/passwords.txt -e base64
+tokenish "Authorization: Basic &ENC[&TOKEN_0&:&TOKEN_1&]ODE&" -t /path/to/usernames/dir/ /path/to/passwords.txt -e base64
 ```
 
 ## License
