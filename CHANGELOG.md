@@ -18,7 +18,7 @@ Log types:
 ### removed
 ### security
 
-## [0.1.0] - 2023/03/02
+## [0.1](https://github.com/VictorMeyer77/tokenish/releases/tag/0.1) - 2023/03/02
 
 ### Added
 
